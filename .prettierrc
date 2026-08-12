@@ -5,6 +5,7 @@
   "tabWidth": 2,
   "useTabs": false,
   "printWidth": 100,
+  "endOfLine": "lf",
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "tailwindAttributes": ["className", "class"],
   "tailwindFunctions": ["clsx", "cn", "cva"],

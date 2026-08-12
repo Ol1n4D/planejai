@@ -1,0 +1,58 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from 'react'
+
+import { type SimulationFormData, simulationFormSteps } from '@src/data/simulation'
+import { useSimulationStorage } from '@src/hooks/useSimulationStorage'
+import { useNavigate } from 'react-router-dom'
+
+import { FormStep } from './FormStep'
+import { StepProgress } from './Progress'
+
+export const SimulationForm = () => {
+  const { saveFormData } = useSimulationStorage()
+  const navigate = useNavigate()
+
+  const [currentStepIndex, setCurrentStepIndex] = useState(0)
+  const [formData, setFormData] = useState<SimulationFormData>({} as SimulationFormData)
+
+  const totalSteps = simulationFormSteps.length
+  const currentStep = simulationFormSteps[currentStepIndex]
+  const { key: _key, ...stepProps } = currentStep
+
+  const handleNextStep = (value: string) => {
+    const updatedFormData = { ...formData, [currentStep.id]: value }
+    setFormData(updatedFormData)
+
+    console.log({ updatedFormData })
+
+    if (currentStepIndex + 1 > totalSteps - 1) {
+      const id = saveFormData(updatedFormData)
+      void navigate(`/resultado/${id}`)
+      return
+    }
+
+    setCurrentStepIndex((prev) => prev + 1)
+  }
+
+  const handlePreviousStep = () => {
+    if (currentStepIndex === 0) {
+      return
+    }
+
+    setCurrentStepIndex((prev) => prev - 1)
+  }
+
+  return (
+    <>
+      <StepProgress currentStep={currentStepIndex + 1} totalSteps={totalSteps} />
+
+      <FormStep
+        key={currentStep.id}
+        {...stepProps}
+        onBack={handlePreviousStep}
+        onNext={handleNextStep}
+        hideBackButton={currentStepIndex === 0}
+      />
+    </>
+  )
+}
