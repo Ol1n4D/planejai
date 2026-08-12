@@ -1,5 +1,8 @@
-# Desafio - Frontend
-Desafio final proposto no curso Front End React do BootCamp Santander 2026
+# 🎓 Desafio Santander Bootcamp 2026 - AI React Front-end
+
+
+Desafio final proposto no curso Front End React do BootCamp Santander 2026 oferecido pela DIO - Digital Inovation One
+
 
 
 # 💰 PlanejAI — Educador Financeiro Inteligente
@@ -198,21 +201,21 @@ Para testar o fluxo principal:
 
 ---
 
-## 📸 Prints
+## 📸 Demonstração Visual (Screenshots)
 
 Alguns prints podem ser adicionados para demonstrar a evolução do projeto.
 
 ### Formulário
 
-![Formulário da simulação](./screenshots/formulario.png)
+![Formulário da simulação](https://github.com/Ol1n4D/planejai/blob/main/src/screenshot/formulario.png)
 
 ### Resultado
 
-![Resultado da simulação](./screenshots/resultado.png)
+![Resultado da simulação](https://github.com/Ol1n4D/planejai/blob/main/src/screenshot/resultado.png?raw=true)
 
 ### Histórico
 
-![Histórico](./screenshots/historico.png)
+![Histórico](https://github.com/Ol1n4D/planejai/blob/main/src/screenshot/historico.png?raw=true)
 
 ---
 
