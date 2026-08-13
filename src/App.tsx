@@ -1,5 +1,5 @@
+/* eslint-disable prettier/prettier */
 import { RouterProvider } from 'react-router-dom'
-
 import { ThemeProvider } from './context/theme/ThemeProvider'
 import router from './router'
 
@@ -10,5 +10,4 @@ function App() {
     </ThemeProvider>
   )
 }
-
 export default App

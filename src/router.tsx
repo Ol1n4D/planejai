@@ -4,24 +4,29 @@ import { SimulationHistoryPage } from '@src/pages/SimulationHistoryPage'
 import { SimulationResultsPage } from '@src/pages/SimulationResultsPage'
 import { createHashRouter } from 'react-router-dom'
 
-const router = createHashRouter([
+const router = createHashRouter(
+  [
+    {
+      element: <RootLayout />,
+      children: [
+        {
+          path: '/',
+          element: <SimulationFormPage />,
+        },
+        {
+          path: '/resultado/:id',
+          element: <SimulationResultsPage />,
+        },
+        {
+          path: '/historico',
+          element: <SimulationHistoryPage />,
+        },
+      ],
+    },
+  ],
   {
-    element: <RootLayout />,
-    children: [
-      {
-        path: '/',
-        element: <SimulationFormPage />,
-      },
-      {
-        path: '/resultado/:id',
-        element: <SimulationResultsPage />,
-      },
-      {
-        path: '/historico',
-        element: <SimulationHistoryPage />,
-      },
-    ],
+    basename: import.meta.env.BASE_URL,
   },
-])
+)
 
 export default router
