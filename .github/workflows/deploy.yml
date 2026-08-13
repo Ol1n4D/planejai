@@ -1,10 +1,8 @@
-name: Deploy PlanejAI
+name: PlanejAI
 
 on:
   push:
     branches: ["main"]
-
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,35 +18,34 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-          cache: pnpm
+          node-version: 20
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
         with:
-          version: 10
+          version: 9
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build
-        run: pnpm build
+        env:
+          VITE_GEMINI_API_KEY: ${{ AQ.Ab8RN6KNWQi282HxJbiihYnMvp3u1YZ2KBxhFp4LHHYoRj3B-A }}
+        run: pnpm run build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "./dist"
 
