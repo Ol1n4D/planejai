@@ -2,9 +2,9 @@ import { RootLayout } from '@src/components/layout/RootLayout'
 import { SimulationFormPage } from '@src/pages/SimulationFormPage'
 import { SimulationHistoryPage } from '@src/pages/SimulationHistoryPage'
 import { SimulationResultsPage } from '@src/pages/SimulationResultsPage'
-import { createBrowserRouter } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
 
-export const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <RootLayout />,
     children: [
@@ -23,3 +23,5 @@ export const router = createBrowserRouter([
     ],
   },
 ])
+
+export default router
