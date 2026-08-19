@@ -1,8 +1,29 @@
+import FormStep from './FormStep';
+
 function App() {
   return (
-    <>
-      <h1>Hello, Vite!</h1>
-    </>
+    <main>
+      <FormStep
+        step={1}
+        title="Dados pessoais"
+        description="Preencha seu nome e e-mail para continuar."
+        actions={
+          <button type="button">
+            Continuar
+          </button>
+        }
+      >
+        <label>
+          Nome
+          <input type="text" name="name" placeholder="Seu nome" />
+        </label>
+
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="seu@email.com" />
+        </label>
+      </FormStep>
+    </main>
   );
 }
 
