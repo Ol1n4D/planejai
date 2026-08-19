@@ -38,7 +38,7 @@ jobs:
 
       - name: Build
         env:
-          VITE_GEMINI_API_KEY: ${{ AQ.Ab8RN6KNWQi282HxJbiihYnMvp3u1YZ2KBxhFp4LHHYoRj3B-A }}
+          VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
         run: pnpm run build
 
       - name: Setup Pages
