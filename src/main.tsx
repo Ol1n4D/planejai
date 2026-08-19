@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { StrictMode } from 'react'
 
 import { ThemeProvider } from '@src/context/theme/ThemeProvider.tsx'
