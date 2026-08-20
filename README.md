@@ -11,6 +11,9 @@ Projeto desenvolvido durante o desafio **"Desenvolvendo Seu Educador Financeiro 
 
 O objetivo foi criar uma aplicação capaz de ajudar o usuário a compreender melhor sua situação financeira por meio de uma simulação e de insights gerados por Inteligência Artificial.
 
+
+🌐 **Site:**https://ol1n4d.github.io/planejai/#/
+
 🔗 **Repositório:** https://github.com/Ol1n4D/planejai
 
 ---
