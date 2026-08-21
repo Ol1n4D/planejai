@@ -1,9 +1,14 @@
 /* eslint-disable prettier/prettier */
+import { ThemeProvider } from '@src/context/theme/ThemeProvider'
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  )
 }
-export default App
 
+export default App
